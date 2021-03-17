@@ -1,7 +1,8 @@
 
 locals {
-    az_zones = [ "1", "2"]
+    az_zones = toset([ "1", "2"])
 }
+
 data "azurerm_resource_group" "project_rg" {
     name                    = "jpapazian-${var.az_project}"
 }
