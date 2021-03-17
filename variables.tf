@@ -11,11 +11,6 @@ variable "az_project" {
     default     = "ARI"
 }
 
-variable "az_zone" {
-  type = number
-  description = "availability zone in which to create vm for high availability"
-}
-
 variable "ssh_username" {
     type = string
 }
