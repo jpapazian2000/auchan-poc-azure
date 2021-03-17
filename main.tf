@@ -12,7 +12,7 @@ data "azurerm_image" "auchanImage" {
 
 module "jpapazian_az_vm" {
   source  = "app.terraform.io/jpapazian-org/jpapazian-az-vm/azurerm"
-  version = "0.0.2"
+  version = "0.0.3"
 
     m_az_vm_size                = var.az_vm_size
     m_az_project                = var.az_project
