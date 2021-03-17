@@ -1,5 +1,7 @@
 
-
+locals {
+    az_zones = [ "1", "2"]
+}
 data "azurerm_resource_group" "project_rg" {
     name                    = "jpapazian-${var.az_project}"
 }
@@ -11,9 +13,11 @@ data "azurerm_image" "auchanImage" {
 
 
 module "jpapazian_az_vm" {
+    
   source  = "app.terraform.io/jpapazian-org/jpapazian-az-vm/azurerm"
-  version = "0.0.3"
-
+  version = "0.0.4"
+    for_each = local.az_zones
+    m_az_zone                   = each.value
     m_az_vm_size                = var.az_vm_size
     m_az_project                = var.az_project
     m_az_location               = var.az_location
