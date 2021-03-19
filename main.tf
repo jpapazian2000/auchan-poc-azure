@@ -16,7 +16,7 @@ data "azurerm_image" "auchanImage" {
 module "jpapazian_az_vm" {
     
   source  = "app.terraform.io/jpapazian-org/jpapazian-az-vm/azurerm"
-  version = "0.1.7"
+  version = "0.1.8"
     for_each                    = local.az_zones
     m_az_zone                   = each.value
     //m_az_zone                   = "1"
