@@ -9,6 +9,14 @@ output "az_public_ip" {
 
 } 
 
+output "resource-group" {
+  value = data.azurerm_resource_group.project_rg.name
+}
+
+output "templateImage" {
+  value = data.azurerm_image.templateImage.name
+}
+
 //output "az_private_ip_address" {
 //    value = module.jpapazian_az_vm.m_az_private_ip_address
   /*  value = {
